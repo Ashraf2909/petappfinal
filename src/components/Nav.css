@@ -1,0 +1,30 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-blue);
+    height: 60px;
+    padding: 0px 80px;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.nav-brand {
+    color: var(--bg-red);
+}
+.menu .menu-btn {
+    background-color: var(--bg-red);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.menu .menu-btn:hover {
+    background-color: rgb(199, 14, 91);
+}
