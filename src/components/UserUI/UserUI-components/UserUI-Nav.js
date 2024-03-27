@@ -19,14 +19,15 @@ import MailIcon from '@mui/icons-material/Mail';
 import "../User.css"
 
 function UserUINav() {
-  const [isDrawerOpen, setDrawerOpen] = React.useState(false);
+    const navigate = useNavigate();
+    const [isDrawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
 
   const Logout = () => {
-    return;
+    navigate('/newblog')
   }
   return (
     <Box sx={{ flexGrow: 1 }}>
