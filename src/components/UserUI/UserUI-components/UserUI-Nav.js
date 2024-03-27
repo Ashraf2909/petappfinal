@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import { useNavigate } from "react-router-dom";
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -23,6 +24,10 @@ function UserUINav() {
   const toggleDrawer = () => {
     setDrawerOpen(!isDrawerOpen);
   };
+
+  const Logout = () => {
+    return;
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{backgroundColor: "black"}}>
@@ -33,13 +38,14 @@ function UserUINav() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 4 }}
+            onClick={toggleDrawer}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             PetMinder
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit" onClick={Logout}>Logout</Button>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -54,25 +60,9 @@ function UserUINav() {
           onKeyDown={toggleDrawer} // Close the drawer with a key press
         >
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            {['Edit Account'].map((text) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
               </ListItem>
